@@ -1,16 +1,14 @@
 package br.com.danielamaral.starswarssocialnetwork.dto;
 
-import br.com.danielamaral.starswarssocialnetwork.model.Denunciation;
-import br.com.danielamaral.starswarssocialnetwork.model.Rebel;
+import java.sql.Timestamp;
+import java.time.Instant;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import br.com.danielamaral.starswarssocialnetwork.model.Denunciation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.sql.Timestamp;
-import java.time.Instant;
-import java.time.LocalTime;
 
 @Data
 @AllArgsConstructor

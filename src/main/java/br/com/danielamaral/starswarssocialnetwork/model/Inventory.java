@@ -1,15 +1,19 @@
 package br.com.danielamaral.starswarssocialnetwork.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import br.com.danielamaral.starswarssocialnetwork.dto.InventoryDto;
-import br.com.danielamaral.starswarssocialnetwork.dto.ItemInventoryDto;
-import br.com.danielamaral.starswarssocialnetwork.dto.RebelDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @AllArgsConstructor

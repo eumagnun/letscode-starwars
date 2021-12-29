@@ -1,8 +1,8 @@
 package br.com.danielamaral.starswarssocialnetwork.dto;
 
-import br.com.danielamaral.starswarssocialnetwork.model.Item;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+
+import br.com.danielamaral.starswarssocialnetwork.model.Item;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

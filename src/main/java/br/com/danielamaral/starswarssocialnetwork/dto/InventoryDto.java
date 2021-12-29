@@ -1,16 +1,14 @@
 package br.com.danielamaral.starswarssocialnetwork.dto;
 
-import br.com.danielamaral.starswarssocialnetwork.model.Inventory;
-import br.com.danielamaral.starswarssocialnetwork.model.Rebel;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+
+import br.com.danielamaral.starswarssocialnetwork.model.Inventory;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @AllArgsConstructor

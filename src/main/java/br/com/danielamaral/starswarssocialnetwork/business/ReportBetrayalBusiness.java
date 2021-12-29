@@ -1,17 +1,17 @@
 package br.com.danielamaral.starswarssocialnetwork.business;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.stereotype.Service;
+
 import br.com.danielamaral.starswarssocialnetwork.exception.MultipleDenunciationSameSuspectException;
 import br.com.danielamaral.starswarssocialnetwork.model.Denunciation;
 import br.com.danielamaral.starswarssocialnetwork.model.Rebel;
 import br.com.danielamaral.starswarssocialnetwork.model.RebelStatus;
 import br.com.danielamaral.starswarssocialnetwork.repository.DenunciationRepository;
 import br.com.danielamaral.starswarssocialnetwork.repository.RebelRepository;
-import org.hibernate.exception.ConstraintViolationException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class ReportBetrayalBusiness {
@@ -32,14 +32,14 @@ public class ReportBetrayalBusiness {
         }
     }
 
-    private void changeStatusRebel(Denunciation denunciation) {
+    private void changeStatusRebel(final Denunciation denunciation) {
         long suspectId = denunciation.getSuspectID();
-        Long count = denunciationRepository.countDenunciationBySuspectID(suspectId);
+        final Long count = denunciationRepository.countDenunciationBySuspectID(suspectId);
 
         if(count >=DENUNCIATION_LIMIT){
-            Optional<Rebel> optional = rebelRepository.findById(suspectId);
+            final Optional<Rebel> optional = rebelRepository.findById(suspectId);
             if(optional.isPresent()) {
-                Rebel rebel = optional.get();
+                final Rebel rebel = optional.get();
                 rebel.setStatus(RebelStatus.TRAITOR);
                 rebelRepository.save(rebel);
             }

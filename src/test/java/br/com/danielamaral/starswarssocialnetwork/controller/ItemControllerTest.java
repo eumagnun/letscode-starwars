@@ -17,7 +17,7 @@ class ItemControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @Test
-    public void shouldReturnItemsList() throws Exception {
+    void shouldReturnItemsList() throws Exception {
         mockMvc.perform( MockMvcRequestBuilders
                         .get("/api/v1/items")
                         .contentType(MediaType.APPLICATION_JSON)
