@@ -6,6 +6,7 @@ import java.time.Instant;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import br.com.danielamaral.starswarssocialnetwork.model.Denunciation;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Schema(title  = "Denunciation")
 public class DenunciationDto {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)

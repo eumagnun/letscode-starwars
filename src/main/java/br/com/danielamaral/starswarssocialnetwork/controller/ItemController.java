@@ -1,21 +1,18 @@
 package br.com.danielamaral.starswarssocialnetwork.controller;
 
-import br.com.danielamaral.starswarssocialnetwork.dto.DefaultResponse;
-import br.com.danielamaral.starswarssocialnetwork.dto.ItemDto;
-import br.com.danielamaral.starswarssocialnetwork.repository.ItemRepository;
-import io.swagger.v3.oas.annotations.media.Schema;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
+import br.com.danielamaral.starswarssocialnetwork.dto.DefaultResponse;
+import br.com.danielamaral.starswarssocialnetwork.dto.ItemDto;
+import br.com.danielamaral.starswarssocialnetwork.repository.ItemRepository;
 
-@RestController
 @RequestMapping("/api/v1")
-@Schema(name = "Item")
 public class ItemController {
 
     @Autowired
