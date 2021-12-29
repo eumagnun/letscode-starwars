@@ -1,5 +1,5 @@
 # letscode-starwars
-
+![Figura 1](https://pngimg.com/uploads/star_wars_logo/star_wars_logo_PNG13.png)
 ## Rodar o projeto com docker
 
 * build image docker
