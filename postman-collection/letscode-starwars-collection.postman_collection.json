@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "9013fadb-08a7-46c1-b2af-402110624242",
+		"name": "letscode-starwars-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "save-rebel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Daniel\",\r\n  \"age\": 30,\r\n  \"gender\": \"MALE\",\r\n  \"locationDto\": {\r\n    \"id\": 1\r\n  },\r\n  \"inventoryDto\": {\r\n    \"inventoryItemsDto\": [\r\n      {\r\n        \"itemDto\": {\r\n          \"id\": 4\r\n        },\r\n        \"quantity\": 10\r\n      },\r\n{\r\n        \"itemDto\": {\r\n          \"id\": 3\r\n        },\r\n        \"quantity\": 10\r\n      }\r\n    ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/rebels/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"rebels",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-rebels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/rebels/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"rebels",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-rebel-location",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/rebels/1/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"rebels",
+						"1",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "denunciation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"accuserID\": 9, \"suspectID\": 5}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/rebels/denunciation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"rebels",
+						"denunciation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "items-exchange",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"negotiationPart1\": {\r\n    \"idPart\": 1,\r\n    \"itensParticipant\": [\r\n      {\r\n        \"id\": 0,\r\n        \"item\": {\r\n          \"id\": 4,\r\n          \"name\": \"Comida\",\r\n          \"points\": 1\r\n        },\r\n        \"quantity\": 10\r\n      }\r\n    ]\r\n  },\r\n  \"negotiationPart2\": {\r\n    \"idPart\": 9,\r\n    \"itensParticipant\": [\r\n      {\r\n       \"id\": 0,\r\n       \"item\": {\r\n          \"id\": 3,\r\n          \"name\": \"Água\",\r\n          \"points\": 2\r\n        },\r\n        \"quantity\": 5\r\n      }\r\n    ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/rebels/exchange",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"rebels",
+						"exchange"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "report-traitors-and-rebels-percentage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/reports/traitors-and-rebels-percentage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"reports",
+						"traitors-and-rebels-percentage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "report-average-resources-by-rebel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/reports/average-resources-by-rebel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"reports",
+						"average-resources-by-rebel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "report-lost-points-related-to-traitors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/reports/lost-points-related-to-traitors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"reports",
+						"lost-points-related-to-traitors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

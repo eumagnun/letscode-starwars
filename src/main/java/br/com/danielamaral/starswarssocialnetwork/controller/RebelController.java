@@ -42,6 +42,7 @@ public class RebelController {
             Rebel rebel = Rebel.parseRebel(rebelDto);
             rebelRepository.save(rebel);
             defaultResponse.setStatus(HttpStatus.OK.value());
+            defaultResponse.setData("Cadastro realizado com sucesso");
         } catch (Exception ex) {
             defaultResponse.setData(ex.getMessage());
             defaultResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
@@ -60,6 +61,7 @@ public class RebelController {
                 rebelRepository.save(rebelUpdated);
             }
             defaultResponse.setStatus(HttpStatus.OK.value());
+            defaultResponse.setData("Localidade atualizada com sucesso");
         } catch (Exception ex) {
             defaultResponse.setData(ex.getMessage());
             defaultResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
@@ -90,6 +92,7 @@ public class RebelController {
         try {
             reportBetrayalBusiness.denounce(Denunciation.parseDenunciation(denunciationDto));
             defaultResponse.setStatus(HttpStatus.OK.value());
+            defaultResponse.setData("Denúncia registrada com sucesso");
         } catch (MultipleDenunciationSameSuspectException ex) {
             defaultResponse.setStatus(HttpStatus.UNPROCESSABLE_ENTITY.value());
             defaultResponse.setData(ex.getMessage());
@@ -101,10 +104,12 @@ public class RebelController {
     }
 
     @PostMapping(value = "/exchange", consumes = "application/json")
-    public void exchange(@RequestBody Negotiation negotiation) {
+    public DefaultResponse exchange(@RequestBody Negotiation negotiation) {
         DefaultResponse defaultResponse = new DefaultResponse();
         try {
-        itemExchangeBusiness.exchange(negotiation);
+	        itemExchangeBusiness.exchange(negotiation);
+	        defaultResponse.setStatus(HttpStatus.OK.value());
+	        defaultResponse.setData("Troca realizada com sucesso");
         } catch (IncompatiblePontuationException | InventoryBlockedException | ParticipantNotFoundException ex) {
             defaultResponse.setStatus(HttpStatus.UNPROCESSABLE_ENTITY.value());
             defaultResponse.setData(ex.getMessage());
@@ -112,6 +117,7 @@ public class RebelController {
             defaultResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
             defaultResponse.setData(ex.getMessage());
         }
+        return defaultResponse;
     }
 
 
